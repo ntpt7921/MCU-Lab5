@@ -95,9 +95,9 @@ int main(void)
     MX_USART2_UART_Init();
     MX_ADC1_Init();
     /* USER CODE BEGIN 2 */
+    uart_receive_init();
     Custom_Scheduler_Add(uart_receive_parse, NULL, 0,
             CUSTOM_SCHEDULER_MS_TO_TICK(10), 0, 0);
-    uart_receive_init();
     Custom_Scheduler_Init();
     /* USER CODE END 2 */
 
