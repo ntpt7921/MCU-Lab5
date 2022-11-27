@@ -1,6 +1,6 @@
 /Debug/
 /Dev/
 
-*Debug.launch
+*.launch
 compile_commands.json
 tags

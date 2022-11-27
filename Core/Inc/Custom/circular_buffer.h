@@ -38,7 +38,7 @@
  * - pointer to the element to add (insert into buffer)
  */
 
-void Custom_CirBuff_Insert(void *arr, size_t asize, size_t esize, 
+void Custom_CirBuff_Insert(void *arr, size_t asize, size_t esize,
         size_t *head, size_t *count, void *elem);
 void Custom_CirBuff_Delete(size_t asize, size_t *head, size_t *count);
 
