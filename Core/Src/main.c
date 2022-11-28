@@ -63,6 +63,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         Custom_Scheduler_Update();
     }
 }
+
+void task_blink_led(void *param)
+{
+    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+}
 /* USER CODE END 0 */
 
 /**
@@ -98,6 +103,8 @@ int main(void)
     uart_receive_init();
     Custom_Scheduler_Add(uart_receive_parse, NULL, 0,
             CUSTOM_SCHEDULER_MS_TO_TICK(10), 0, 0);
+    Custom_Scheduler_Add(task_blink_led, NULL, 0,
+            CUSTOM_SCHEDULER_MS_TO_TICK(500), 0, 0);
     Custom_Scheduler_Init();
     /* USER CODE END 2 */
 
